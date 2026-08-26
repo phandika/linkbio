@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prima — Bio Links</title>
+  <!-- Google Fonts: Tulisan Tangan & Catatan -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Patrick+Hand&family=Kalam:wght@300;400;700&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --paper-bg: #f9f7f1;
+      --grid-line: #dbe4eb;
+      --margin-line: #f28b82;
+      --ink-blue: #1e3a8a;
+      --ink-dark: #22292f;
+      --tape-color: rgba(255, 235, 170, 0.75);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      background-color: var(--paper-bg);
+      /* Background Kertas Kotak-Kotak */
+      background-image: 
+        linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+        linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px),
+        linear-gradient(to right, rgba(239, 68, 68, 0.4) 2px, transparent 2px);
+      background-size: 24px 24px, 24px 24px, 100% 100%;
+      background-position: 0 0, 0 0, 48px 0;
+      font-family: 'Patrick Hand', 'Kalam', cursive;
+      color: var(--ink-dark);
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 30px 16px;
+      line-height: 1.5;
+    }
+
+    /* Container Lembaran Buku */
+    .notebook-sheet {
+      position: relative;
+      width: 100%;
+      max-width: 480px;
+      background: #ffffff;
+      background-image: 
+        linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+        linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
+      background-size: 24px 24px;
+      padding: 40px 24px 30px 24px;
+      border-radius: 4px 18px 6px 16px / 16px 6px 18px 4px;
+      box-shadow: 
+        0 1px 3px rgba(0,0,0,0.06), 
+        0 10px 25px -5px rgba(0, 0, 0, 0.12),
+        4px 6px 0px rgba(0,0,0,0.03);
+      border: 1.5px solid #2d3748;
+    }
+
+    .washi-tape-top {
+      position: absolute;
+      top: -14px;
+      left: 50%;
+      transform: translateX(-50%) rotate(-1.5deg);
+      width: 140px;
+      height: 28px;
+      background: var(--tape-color);
+      border-left: 2px dashed rgba(0,0,0,0.15);
+      border-right: 2px dashed rgba(0,0,0,0.15);
+      box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+      z-index: 10;
+    }
+
+    .clip-decoration {
+      position: absolute;
+      top: -8px;
+      right: 24px;
+      font-size: 28px;
+      transform: rotate(15deg);
+      user-select: none;
+    }
+
+    .profile-section {
+      text-align: center;
+      margin-bottom: 24px;
+      position: relative;
+    }
+
+    .avatar-wrapper {
+      position: relative;
+      display: inline-block;
+      margin-bottom: 12px;
+    }
+
+    .avatar-tape {
+      position: absolute;
+      top: -8px;
+      right: -10px;
+      width: 50px;
+      height: 18px;
+      background: rgba(186, 230, 253, 0.7);
+      transform: rotate(25deg);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      z-index: 2;
+    }
+
+    .avatar-frame {
+      background: #fff;
+      padding: 6px 6px 14px 6px;
+      border: 1.5px solid #2d3748;
+      box-shadow: 2px 3px 0 rgba(0, 0, 0, 0.15);
+      transform: rotate(-2deg);
+      display: inline-block;
+      border-radius: 3px;
+      transition: transform 0.2s ease;
+    }
+
+    .avatar-frame:hover {
+      transform: rotate(0deg) scale(1.03);
+    }
+
+    .avatar-img {
+      width: 96px;
+      height: 96px;
+      border-radius: 2px;
+      object-fit: cover;
+      display: block;
+      border: 1px solid #e2e8f0;
+    }
+
+    .profile-title {
+      font-family: 'Caveat', cursive;
+      font-size: 32px;
+      font-weight: 700;
+      color: #0f172a;
+      line-height: 1.1;
+      margin-bottom: 4px;
+    }
+
+    .profile-handle {
+      display: inline-block;
+      font-size: 15px;
+      color: #3b82f6;
+      background: #eff6ff;
+      padding: 2px 10px;
+      border-radius: 12px;
+      border: 1px dashed #93c5fd;
+      text-decoration: none;
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+
+    .profile-greeting {
+      font-size: 18px;
+      color: #334155;
+      margin-top: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+
+    .sketch-divider {
+      border: none;
+      height: 2px;
+      background-image: repeating-linear-gradient(90deg, #475569 0, #475569 6px, transparent 6px, transparent 10px);
+      margin: 18px 0 22px 0;
+    }
+
+    .section-tag {
+      display: inline-block;
+      font-family: 'Caveat', cursive;
+      font-size: 20px;
+      font-weight: bold;
+      background: #fef9c3;
+      color: #854d0e;
+      padding: 2px 12px;
+      border: 1px solid #facc15;
+      border-radius: 4px 10px 4px 12px;
+      transform: rotate(-1deg);
+      margin-bottom: 14px;
+      box-shadow: 1px 1px 0 rgba(0,0,0,0.08);
+    }
+
+    .links-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .link-card {
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: #ffffff;
+      padding: 12px 16px;
+      text-decoration: none;
+      color: #1e293b;
+      border: 2px solid #334155;
+      border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+      box-shadow: 3px 3px 0 #1e293b;
+      transition: all 0.18s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .link-card:hover {
+      transform: translate(-2px, -3px);
+      box-shadow: 5px 6px 0 #1e293b;
+      background-color: #fdfefe;
+    }
+
+    .link-card:active {
+      transform: translate(2px, 2px);
+      box-shadow: 1px 1px 0 #1e293b;
+    }
+
+    .card-spotify {
+      background: #f0fdf4;
+      border-color: #15803d;
+      box-shadow: 3px 3px 0 #15803d;
+    }
+    .card-spotify:hover {
+      box-shadow: 5px 6px 0 #15803d;
+    }
+
+    .link-num {
+      font-family: 'Caveat', cursive;
+      font-weight: 700;
+      font-size: 20px;
+      min-width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #f1f5f9;
+      border: 1.5px solid #64748b;
+      border-radius: 50%;
+      color: #334155;
+      flex-shrink: 0;
+    }
+
+    .card-spotify .link-num {
+      background: #dcfce7;
+      border-color: #16a34a;
+      color: #15803d;
+    }
+
+    .link-info {
+      flex: 1;
+      text-align: left;
+    }
+
+    .link-title {
+      font-size: 17px;
+      font-weight: 700;
+      line-height: 1.3;
+      color: #0f172a;
+    }
+
+    .link-sub {
+      font-size: 13px;
+      color: #64748b;
+      margin-top: 2px;
+    }
+
+    .link-arrow {
+      font-family: 'Caveat', cursive;
+      font-size: 22px;
+      font-weight: bold;
+      color: #64748b;
+      transition: transform 0.2s ease;
+    }
+
+    .link-card:hover .link-arrow {
+      transform: translateX(4px);
+      color: #0f172a;
+    }
+
+    .sticky-footer-note {
+      margin-top: 26px;
+      background: #fffbeb;
+      border: 1px dashed #f59e0b;
+      border-radius: 6px;
+      padding: 12px 14px;
+      font-size: 14px;
+      color: #78350f;
+      text-align: center;
+      position: relative;
+    }
+
+    .sticky-footer-note::before {
+      content: '📌';
+      position: absolute;
+      top: -10px;
+      left: 14px;
+      font-size: 16px;
+    }
+
+    .footer-credits {
+      text-align: center;
+      margin-top: 18px;
+      font-family: 'Caveat', cursive;
+      font-size: 18px;
+      color: #64748b;
+    }
+
+    .footer-credits a {
+      color: #0284c7;
+      text-decoration: none;
+      border-bottom: 1px dashed #0284c7;
+    }
+  </style>
+</head>
+<body>
+
+  <main class="notebook-sheet">
+    <div class="washi-tape-top"></div>
+    <div class="clip-decoration">📎</div>
+
+    <header class="profile-section">
+      <div class="avatar-wrapper">
+        <div class="avatar-tape"></div>
+        <div class="avatar-frame">
+          <img class="avatar-img" src="https://prima.art.blog/wp-content/uploads/2023/06/cropped-img_20230619_234041.jpg?w=192" alt="Prima Avatar" onerror="this.src='https://api.dicebear.com/7.x/bottts/svg?seed=Prima'">
+        </div>
+      </div>
+      
+      <h1 class="profile-title">Prima H</h1>
+      <a href="https://prima.art.blog" target="_blank" rel="noopener noreferrer" class="profile-handle">@prima.art.blog</a>
+      
+      <div class="profile-greeting">
+        <span>🗨️</span>
+        <span>Hai, Apa Kabar?</span>
+        <span>✌️</span>
+      </div>
+    </header>
+
+    <hr class="sketch-divider">
+
+    <div style="margin-bottom: 20px;">
+      <div class="section-tag">⭐ Podcast & Jurnal</div>
+      
+      <div class="links-list">
+        <!-- 01 Spotify -->
+        <a href="https://open.spotify.com/show/62wmnwLh0pf62dtAc37e0p?si=CNq2tvglQHafx-qztGY8JQ&utm_source=copy-link" target="_blank" rel="noopener noreferrer" class="link-card card-spotify">
+          <span class="link-num">01</span>
+          <div class="link-info">
+            <div class="link-title">🎙️ Podcast Prima Class</div>
+            <div class="link-sub">Dengarkan episode terbaru di Spotify</div>
+          </div>
+          <span class="link-arrow">➔</span>
+        </a>
+
+        <!-- 02 Notion -->
+        <a href="https://primah.notion.site/Prima-H-5998303967a048b0a4d64f4fb0a43d1e" target="_blank" rel="noopener noreferrer" class="link-card">
+          <span class="link-num">02</span>
+          <div class="link-info">
+            <div class="link-title">📓 Dailymonthly Blog</div>
+            <div class="link-sub">Catatan & dokumentasi via Notion</div>
+          </div>
+          <span class="link-arrow">➔</span>
+        </a>
+      </div>
+    </div>
+
+    <div>
+      <div class="section-tag" style="background:#e0f2fe; color:#0369a1; border-color:#7dd3fc; transform: rotate(1deg);">
+        ✍️ Catatan & Esai Terbaru
+      </div>
+
+      <div class="links-list">
+        <!-- 03 -->
+        <a href="https://prima.art.blog/2026/08/24/tutorial-menjadi-warga-negara-yang-baik/" target="_blank" rel="noopener noreferrer" class="link-card">
+          <span class="link-num">03</span>
+          <div class="link-info">
+            <div class="link-title">Tutorial Menjadi Warga Negara yang Baik</div>
+            <div class="link-sub">Esai sosial & refleksi diri</div>
+          </div>
+          <span class="link-arrow">➔</span>
+        </a>
+
+        <!-- 04 -->
+        <a href="https://prima.art.blog/2026/08/24/indonesia-dari-struk-belanja/" target="_blank" rel="noopener noreferrer" class="link-card">
+          <span class="link-num">04</span>
+          <div class="link-info">
+            <div class="link-title">Indonesia dari Struk Belanja</div>
+            <div class="link-sub">Membaca realitas lewat kasir & nota</div>
+          </div>
+          <span class="link-arrow">➔</span>
+        </a>
+
+        <!-- 05 -->
+        <a href="https://prima.art.blog/2026/08/25/ketika-ai-diminta-menulis-esai-tentang-ketidakadilan/" target="_blank" rel="noopener noreferrer" class="link-card">
+          <span class="link-num">05</span>
+          <div class="link-info">
+            <div class="link-title">Ketika AI Diminta Menulis Esai Ketidakadilan</div>
+            <div class="link-sub">Eksplorasi batas moral kecerdasan buatan</div>
+          </div>
+          <span class="link-arrow">➔</span>
+        </a>
+
+        <!-- 06 -->
+        <a href="https://prima.art.blog/2026/08/26/sytem-prompt-jangan-menjadi-manusia/" target="_blank" rel="noopener noreferrer" class="link-card">
+          <span class="link-num">06</span>
+          <div class="link-info">
+            <div class="link-title">System Prompt: Jangan Menjadi Manusia</div>
+            <div class="link-sub">Eksperimen prompt & makna kemanusiaan</div>
+          </div>
+          <span class="link-arrow">➔</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="sticky-footer-note">
+      "Menulis untuk merawat ingatan dan menertawakan realitas." ✨
+    </div>
+
+    <footer class="footer-credits">
+      Dibuat dengan pensil & kertas digital ✎ <a href="https://prima.art.blog" target="_blank" rel="noopener noreferrer">prima.art.blog</a>
+    </footer>
+
+  </main>
+
+</body>
+</html>
