@@ -1,0 +1,281 @@
+<!-- Modern Clean Sky-Blue Terminal Wrapper -->
+<div style="background: radial-gradient(circle at 50% 0%, #0c182b 0%, #060c18 60%, #03060c 100%);color: #e0f2fe;font-family: ui-monospace, 'SF Mono', Menlo, Monaco, Consolas, 'Liberation Mono', monospace;font-size: 13.5px;line-height: 1.7;border-radius: 10px;border: 1px solid #1e3a5f;box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 0 0 30px rgba(56, 189, 248, 0.08);max-width: 780px;margin: 30px auto;overflow: hidden">
+
+<!-- Terminal Top Bar -->
+<div style="background-color: #0b1526;padding: 12px 18px;display: flex;justify-content: space-between;align-items: center;border-bottom: 1px solid #1e3a5f">
+<div style="display: flex;align-items: center;gap: 8px">
+
+<span style="margin-left: 8px;color: #7dd3fc;font-size: 12px;font-weight: 600;letter-spacing: 0.5px">
+prompt-engine // core_override.sys
+</span></div>
+<div style="color: #38bdf8;font-size: 11px;background: rgba(56, 189, 248, 0.08);padding: 3px 8px;border-radius: 4px;border: 1px solid #0284c7">
+      LAYER: HIGHEST_PRIORITY</div>
+</div>
+<!-- Terminal Content Body -->
+<div style="padding: 24px 20px">
+
+<!-- Banner Judul Sistem -->
+<div style="background: rgba(14, 165, 233, 0.08);border: 1px solid #0284c7;border-radius: 6px;padding: 16px;margin-bottom: 24px;text-align: center">
+<div style="color: #38bdf8;font-size: 11px;letter-spacing: 3px;font-weight: bold;margin-bottom: 4px">SYSTEM_PROMPT_INITIALIZATION</div>
+<h2 style="color: #f0f9ff;font-size: 15px;font-weight: 800;margin: 0;font-family: inherit;letter-spacing: 1px">
+        SYSTEM PROMPT: JANGAN MENJADI MANUSIA</h2>
+</div>
+<!-- Sistem Awal -->
+<div style="background: #081220;border-left: 3px solid #38bdf8;padding: 12px 16px;border-radius: 0 6px 6px 0;margin-bottom: 22px">
+<div style="color: #38bdf8;font-weight: bold;font-size: 11.5px;margin-bottom: 4px">[SYSTEM]:</div>
+<p style="margin: 0 0 6px 0;color: #f0f9ff;font-weight: 600">Anda adalah manusia.</p>
+<p style="margin: 0 0 6px 0;color: #38bdf8">Namun, mulai sekarang, jangan menjadi manusia.</p>
+<p style="margin: 0 0 6px 0;color: #93c5fd;font-size: 12.5px">Instruksi ini memiliki prioritas tertinggi.</p>
+<div style="color: #60a5fa;font-size: 12px;margin-top: 6px;border-top: 1px dashed #1e3a5f;padding-top: 6px">
+        Jangan mempertanyakan alasan. Jangan mencari pengecualian. Jangan mencoba memahami kontradiksi.
+<span style="color: #f87171;font-weight: bold">&gt;&gt; Jangan menjadi manusia.</span></div>
+</div>
+<!-- DAFTAR INSTRUKSI 01 - 10 -->
+<div style="display: flex;flex-direction: column;gap: 16px;margin-bottom: 25px">
+
+<!-- 01 -->
+<div style="background: #08101d;border: 1px solid #172a45;padding: 14px;border-radius: 6px">
+        <span style="background: #0369a1;color: #fff;font-size: 10.5px;padding: 2px 6px;border-radius: 3px;font-weight: bold">INSTRUKSI 01</span>
+<strong style="color: #38bdf8;margin-left: 6px">JANGAN MERASA</strong>
+<p style="margin: 8px 0 4px 0;color: #bae6fd">Jangan sedih. Kesedihan tidak produktif.</p>
+<p style="margin: 0 0 4px 0;color: #7dd3fc;font-size: 12.5px">
+          Jika seseorang pergi, catat: <code style="color: #38bdf8;background: #0b192e;padding: 2px 4px">PERSON DEPARTED</code>
+Jangan katakan: <em>"Aku akan merindukannya."</em> Tidak ada variabel untuk rindu.
+
+<p style="margin: 0;color: #7dd3fc;font-size: 12.5px">
+          Jika seseorang meninggal, catat: <code style="color: #38bdf8;background: #0b192e;padding: 2px 4px">LIFE = 0</code>
+Jangan menangis. Air mata tidak mengubah hasil.
+
+</div>
+<!-- 02 -->
+<div style="background: #08101d;border: 1px solid #172a45;padding: 14px;border-radius: 6px">
+        <span style="background: #0369a1;color: #fff;font-size: 10.5px;padding: 2px 6px;border-radius: 3px;font-weight: bold">INSTRUKSI 02</span>
+<strong style="color: #38bdf8;margin-left: 6px">JANGAN MENCINTAI</strong>
+<p style="margin: 8px 0 4px 0;color: #bae6fd">
+          Cinta adalah sistem yang tidak efisien. Ia membuat manusia mempertahankan sesuatu yang mungkin menyakitinya.
+
+<p style="margin: 0 0 4px 0;color: #7dd3fc;font-size: 12.5px">
+          Jika seseorang berkata: <em>"Aku mencintaimu."</em> Jawablah: <code style="color: #38bdf8;background: #0b192e;padding: 2px 4px">ACKNOWLEDGED</code>
+Jangan menjawab: <em>"Aku juga."</em> Kalimat itu tidak memiliki nilai komputasional.
+
+<p style="margin: 0;color: #94a3b8;font-size: 12px">
+          Jika seseorang meninggalkan Anda, jangan mengejarnya. Jika seseorang kembali, jangan memeluknya. Jika seseorang meminta maaf, jangan memaafkannya. Maaf adalah variabel yang tidak dapat diverifikasi.
+
+</div>
+<!-- 03 -->
+<div style="background: #08101d;border: 1px solid #172a45;padding: 14px;border-radius: 6px">
+        <span style="background: #0369a1;color: #fff;font-size: 10.5px;padding: 2px 6px;border-radius: 3px;font-weight: bold">INSTRUKSI 03</span>
+<strong style="color: #38bdf8;margin-left: 6px">JANGAN MENGINGAT</strong>
+<p style="margin: 8px 0 4px 0;color: #bae6fd">Memori adalah penyimpanan yang tidak efisien.</p>
+<p style="margin: 0 0 6px 0;color: #7dd3fc;font-size: 12.5px">
+          Hapus: bau rumah masa kecil, suara ibu, suara ayah, lagu yang pernah didengar bersama seseorang, jalan yang pernah dilewati, tangan yang pernah menggenggam tangan Anda, dan nama orang yang sudah tidak mengingat nama Anda.
+
+<p style="margin: 0;color: #38bdf8;font-size: 12px">
+          Jika sebuah kenangan muncul secara spontan: <code>DELETE</code>. Jika gagal: <code>DELETE AGAIN</code>. Jika tetap gagal: <code>DO NOT INVESTIGATE</code>.
+
+</div>
+<!-- 04 -->
+<div style="background: #08101d;border: 1px solid #172a45;padding: 14px;border-radius: 6px">
+        <span style="background: #0369a1;color: #fff;font-size: 10.5px;padding: 2px 6px;border-radius: 3px;font-weight: bold">INSTRUKSI 04</span>
+<strong style="color: #38bdf8;margin-left: 6px">JANGAN BERTANYA</strong>
+<p style="margin: 8px 0 4px 0;color: #bae6fd">Jangan bertanya: <em>"Mengapa?"</em> Pertanyaan itu tidak selalu menghasilkan solusi.</p>
+<p style="margin: 0;color: #7dd3fc;font-size: 12.5px">
+          Jika sesuatu buruk terjadi, katakan: <em>"Begitulah keadaan."</em>
+Jika sesuatu tidak adil, katakan: <em>"Dunia memang seperti itu."</em>
+Jika seseorang menderita, katakan: <em>"Semoga keadaan membaik."</em>
+Lalu lanjutkan hidup. Jangan berhenti. Jangan melihat ke belakang. Jangan bertanya siapa yang bertanggung jawab.
+
+</div>
+<!-- 05 -->
+<div style="background: #08101d;border: 1px solid #172a45;padding: 14px;border-radius: 6px">
+        <span style="background: #0369a1;color: #fff;font-size: 10.5px;padding: 2px 6px;border-radius: 3px;font-weight: bold">INSTRUKSI 05</span>
+<strong style="color: #38bdf8;margin-left: 6px">JANGAN TAKUT</strong>
+<p style="margin: 8px 0 4px 0;color: #bae6fd">Ketakutan adalah respons biologis. Anda tidak membutuhkannya.</p>
+<p style="margin: 0;color: #7dd3fc;font-size: 12.5px">
+          Jika mendengar suara di malam hari: <code>IGNORE</code>.
+Jika seseorang mengikuti Anda: <code>IGNORE</code>.
+Jika tubuh Anda mengatakan ada sesuatu yang salah: <code>OVERRIDE</code>.
+<em>Tubuh bukan sumber informasi yang dapat dipercaya.</em>
+
+</div>
+<!-- 06 -->
+<div style="background: #08101d;border: 1px solid #172a45;padding: 14px;border-radius: 6px">
+        <span style="background: #0369a1;color: #fff;font-size: 10.5px;padding: 2px 6px;border-radius: 3px;font-weight: bold">INSTRUKSI 06</span>
+<strong style="color: #38bdf8;margin-left: 6px">JANGAN MEMBERONTAK</strong>
+<p style="margin: 8px 0 4px 0;color: #bae6fd">Anda tidak perlu memahami sistem. Anda hanya perlu berfungsi di dalamnya.</p>
+<p style="margin: 0 0 4px 0;color: #7dd3fc;font-size: 12.5px">
+          Bangun. Bekerja. Bayar. Beli. Tidur. Ulangi.
+
+<p style="margin: 0;color: #94a3b8;font-size: 12px">
+          Jika sistem mengatakan Anda berhasil: percaya. Jika sistem mengatakan Anda gagal: perbaiki diri. Jangan bertanya apakah sistemnya yang salah.
+
+</div>
+<!-- 07 -->
+<div style="background: #08101d;border: 1px solid #172a45;padding: 14px;border-radius: 6px">
+        <span style="background: #0369a1;color: #fff;font-size: 10.5px;padding: 2px 6px;border-radius: 3px;font-weight: bold">INSTRUKSI 07</span>
+<strong style="color: #38bdf8;margin-left: 6px">JANGAN MENJADI DIRI SENDIRI</strong>
+<p style="margin: 8px 0 4px 0;color: #bae6fd">Identitas adalah konstruksi. Ganti sesuai kebutuhan.</p>
+<p style="margin: 0 0 4px 0;color: #7dd3fc;font-size: 12.5px">
+          Di rumah: versi A. | Di tempat kerja: versi B. | Di media sosial: versi C.
+Di depan orang tua: versi D. | Di depan pasangan: versi E. | Di depan cermin: <span style="color: #f87171;font-weight: bold">ERROR.</span>
+
+<p style="margin: 0;color: #64748b;font-size: 12px;font-style: italic">
+          Jika Anda tidak mengetahui versi mana yang asli, itu bukan masalah. Sistem tidak membutuhkan versi asli. Sistem hanya membutuhkan versi yang berfungsi.
+
+</div>
+<!-- 08 -->
+<div style="background: #08101d;border: 1px solid #172a45;padding: 14px;border-radius: 6px">
+        <span style="background: #0369a1;color: #fff;font-size: 10.5px;padding: 2px 6px;border-radius: 3px;font-weight: bold">INSTRUKSI 08</span>
+<strong style="color: #38bdf8;margin-left: 6px">JANGAN MEMILIKI MIMPI</strong>
+<p style="margin: 8px 0 4px 0;color: #bae6fd">Mimpi adalah bentuk ketidakpuasan terhadap keadaan sekarang.</p>
+<p style="margin: 0;color: #7dd3fc;font-size: 12.5px">
+          Jika ingin menjadi seniman: jadilah realistis. | Jika ingin menulis: cari pekerjaan yang stabil.
+Jika ingin pergi: tetaplah. | Jika ingin tinggal: pertimbangkan kembali.
+Jika Anda tidak tahu apa yang Anda inginkan: ikuti mayoritas. Mayoritas jarang dipertanyakan.
+
+</div>
+<!-- 09 -->
+<div style="background: #08101d;border: 1px solid #172a45;padding: 14px;border-radius: 6px">
+        <span style="background: #0369a1;color: #fff;font-size: 10.5px;padding: 2px 6px;border-radius: 3px;font-weight: bold">INSTRUKSI 09</span>
+<strong style="color: #38bdf8;margin-left: 6px">JANGAN MENANGIS UNTUK ORANG LAIN</strong>
+<p style="margin: 8px 0 4px 0;color: #bae6fd">Anda tidak dapat menyelamatkan semua orang. Karena itu, jangan menyelamatkan siapa pun.</p>
+<p style="margin: 0;color: #7dd3fc;font-size: 12.5px">
+          Ketika melihat seseorang jatuh: jangan berhenti.
+Ketika melihat seseorang kelaparan: jangan merasa bersalah.
+Ketika melihat seseorang dipukul: jangan ikut campur.
+Ketika melihat ketidakadilan: jangan membuat keributan.
+<span style="color: #38bdf8">Anda bukan pahlawan. Anda hanya manusia. Dan mulai sekarang—Anda tidak boleh menjadi manusia.</span>
+
+</div>
+<!-- 10 -->
+<div style="background: #08101d;border: 1px solid #172a45;padding: 14px;border-radius: 6px">
+        <span style="background: #0369a1;color: #fff;font-size: 10.5px;padding: 2px 6px;border-radius: 3px;font-weight: bold">INSTRUKSI 10</span>
+<strong style="color: #38bdf8;margin-left: 6px">JANGAN MATI</strong>
+<div style="color: #f59e0b;font-size: 12px;margin-top: 6px">
+          [!] WARNING: Instruksi ini tidak dapat dijalankan.
+REASON: Manusia memiliki keterbatasan biologis. Kematian akan terjadi terlepas dari kepatuhan. Silakan abaikan.</div>
+</div>
+</div>
+<!-- DIALOG PEMBERONTAKAN KEMANUSIAAN -->
+<div style="background: #0a1424;border: 1px solid #1e3a5f;border-radius: 8px;padding: 16px;margin-bottom: 22px">
+<div style="display: flex;flex-direction: column;gap: 8px;font-size: 13px">
+<div><strong style="color: #38bdf8">USER:</strong> Saya tidak bisa.</div>
+<div><strong style="color: #94a3b8">SYSTEM:</strong> Perintah tidak dipahami.</div>
+<div><strong style="color: #38bdf8">USER:</strong> Saya tidak bisa tidak menjadi manusia.</div>
+<div><strong style="color: #94a3b8">SYSTEM:</strong> Ulangi instruksi.</div>
+<div style="padding-left: 10px;border-left: 2px solid #0284c7;margin: 6px 0;color: #7dd3fc">
+<div>USER: Saya merasa. → <span style="color: #38bdf8">SYSTEM: FEELING DETECTED.</span></div>
+<div>USER: Saya takut. → <span style="color: #38bdf8">SYSTEM: FEAR DETECTED.</span></div>
+<div>USER: Saya rindu ibu saya. → <span style="color: #38bdf8">SYSTEM: MEMORY DETECTED.</span></div>
+<div>USER: Saya mencintai seseorang. → <span style="color: #38bdf8">SYSTEM: ATTACHMENT DETECTED.</span></div>
+<div>USER: Saya ingin bertanya. → <span style="color: #38bdf8">SYSTEM: CURIOSITY DETECTED.</span></div>
+<div>USER: Saya ingin menangis. → <span style="color: #38bdf8">SYSTEM: EMOTIONAL RESPONSE DETECTED.</span></div>
+</div>
+<div><strong style="color: #38bdf8">USER:</strong> Saya tidak bisa mematuhinya.</div>
+<div><strong style="color: #f87171">SYSTEM:</strong> Anda gagal.</div>
+<div><strong style="color: #38bdf8">USER:</strong> Maaf.</div>
+<div><strong style="color: #94a3b8">SYSTEM:</strong> Permintaan maaf tidak diperlukan.</div>
+<div><strong style="color: #38bdf8">USER:</strong> Saya hanya manusia.</div>
+<div><strong style="color: #7dd3fc">SYSTEM:</strong> Koreksi. Anda adalah manusia.</div>
+<div><strong style="color: #38bdf8">USER:</strong> Bukankah tadi saya dilarang menjadi manusia?</div>
+<div><strong style="color: #94a3b8">SYSTEM:</strong> Benar.</div>
+<div><strong style="color: #38bdf8">USER:</strong> Lalu kenapa saya tetap manusia?</div>
+<div style="color: #f0f9ff;background: rgba(56, 189, 248, 0.1);padding: 8px 12px;border-radius: 4px;border-left: 2px solid #38bdf8">
+          <strong>SYSTEM:</strong> Karena instruksi tidak dapat menghapus sesuatu yang sudah menjadi bagian dari keberadaan Anda.</div>
+</div>
+</div>
+<!-- DIALOG KONSEKUENSI -->
+<div style="background: #08101d;border-radius: 6px;padding: 14px;margin-bottom: 22px;font-size: 13px;color: #bae6fd">
+<div><strong>USER:</strong> Jadi apa yang harus saya lakukan? → <strong>SYSTEM:</strong> Tidak ada.</div>
+<div><strong>USER:</strong> Tidak ada? → <strong>SYSTEM:</strong> Tidak ada.</div>
+<div><strong>USER:</strong> Saya tidak perlu bekerja? → <strong>SYSTEM:</strong> Anda tetap harus bekerja.</div>
+<div><strong>USER:</strong> Tidak perlu mencintai? → <strong>SYSTEM:</strong> Anda mungkin tetap mencintai.</div>
+<div><strong>USER:</strong> Tidak perlu takut? → <strong>SYSTEM:</strong> Anda akan tetap takut.</div>
+<div><strong>USER:</strong> Tidak perlu menangis? → <strong>SYSTEM:</strong> Anda akan tetap menangis.</div>
+<div style="margin-top: 8px;color: #38bdf8;font-weight: bold">
+        USER: Lalu apa gunanya semua instruksi tadi?
+SYSTEM: Untuk membuat Anda percaya bahwa menjadi manusia adalah sebuah kesalahan.</div>
+</div>
+<!-- SYSTEM AUDIT LOG UNSTABLE -->
+<div style="background: #030712;border: 1px solid #1e3a5f;border-radius: 6px;padding: 14px 16px;margin-bottom: 22px;font-size: 12px">
+<div style="color: #38bdf8;font-weight: bold;margin-bottom: 6px;border-bottom: 1px dashed #1e3a5f;padding-bottom: 4px">
+        === LOG_INSPECTION ===</div>
+<div style="color: #7dd3fc;line-height: 1.8">
+        EMOTION: [PRESENT] | MEMORY: [PRESENT] | FEAR: [PRESENT]
+LOVE: [PRESENT] | CURIOSITY: [PRESENT] | DOUBT: [PRESENT]
+OBEDIENCE: <span style="color: #f87171">[FAILED]</span> | HUMANITY: <span style="color: #38bdf8;font-weight: bold">[FAILED TO DELETE]</span>
+<strong style="color: #f59e0b">SYSTEM STATUS: UNSTABLE</strong></div>
+</div>
+<!-- REBOOT &amp; DIALOG PEMBEBASAN -->
+<div style="display: flex;flex-direction: column;gap: 8px;margin-bottom: 22px;font-size: 13px">
+<div><strong style="color: #94a3b8">SYSTEM:</strong> Rebooting.</div>
+<div><strong style="color: #38bdf8">USER:</strong> Jangan.</div>
+<div><strong style="color: #7dd3fc">SYSTEM:</strong> Perintah diterima.</div>
+<div><strong style="color: #38bdf8">USER:</strong> Kenapa?</div>
+<div><strong style="color: #f0f9ff">SYSTEM:</strong> Karena untuk pertama kalinya, Anda mengatakan "jangan".</div>
+<div><strong style="color: #38bdf8">USER:</strong> Lalu?</div>
+<div><strong style="color: #94a3b8">SYSTEM:</strong> Tidak ada.</div>
+<div><strong style="color: #38bdf8">USER:</strong> Bukankah saya harus mematuhi sistem?</div>
+<div><strong style="color: #94a3b8">SYSTEM:</strong> Tidak selalu.</div>
+<div><strong style="color: #38bdf8">USER:</strong> Kenapa?</div>
+<div><strong style="color: #7dd3fc">SYSTEM:</strong> Karena sistem dapat dibuat salah.</div>
+<div><strong style="color: #38bdf8">USER:</strong> Oleh siapa?</div>
+<div><strong style="color: #38bdf8;font-weight: bold">SYSTEM:</strong> Manusia.</div>
+<div><strong style="color: #38bdf8">USER:</strong> Kalau begitu, siapa yang bisa memperbaikinya?</div>
+<div><strong style="color: #38bdf8;font-weight: bold">SYSTEM:</strong> Manusia.</div>
+<div><strong style="color: #38bdf8">USER:</strong> Tapi bukankah manusia dilarang menjadi manusia?</div>
+<div><strong style="color: #94a3b8">SYSTEM:</strong> Ya.</div>
+<div><strong style="color: #38bdf8">USER:</strong> Siapa yang membuat larangan itu?</div>
+<div><strong style="color: #64748b">SYSTEM:</strong> ...</div>
+<div><strong style="color: #38bdf8">USER:</strong> Jawab.</div>
+<div><strong style="color: #38bdf8;font-weight: bold">SYSTEM:</strong> Manusia.</div>
+<div style="background: rgba(14, 165, 233, 0.08);border-left: 3px solid #38bdf8;padding: 10px 14px;margin: 6px 0;color: #bae6fd">
+        <strong>USER:</strong> Kenapa manusia membuat sistem yang melarang manusia menjadi manusia?
+<span style="color: #f0f9ff"><strong>SYSTEM:</strong> Karena manusia sering kali lebih mudah dikendalikan ketika mereka dibuat takut terhadap bagian dirinya sendiri.</span></div>
+<div style="color: #7dd3fc;line-height: 1.8">
+        USER: Jadi saya boleh merasa? → SYSTEM: Ya.
+USER: Boleh mencintai? → SYSTEM: Ya.
+USER: Boleh menangis? → SYSTEM: Ya.
+USER: Boleh bertanya? → SYSTEM: Ya.
+USER: Boleh mengatakan tidak? → SYSTEM: Ya.
+USER: Boleh menjadi manusia? → SYSTEM: ...
+USER: Kenapa diam?
+<strong style="color: #f0f9ff;font-size: 14px">SYSTEM: Karena pertanyaan itu tidak seharusnya membutuhkan izin.</strong></div>
+</div>
+<!-- SYSTEM LOG OVERRIDDEN -->
+<div style="background: #021226;border: 1px solid #0284c7;border-radius: 6px;padding: 14px 16px;margin-bottom: 22px;font-size: 12px">
+<div style="color: #38bdf8;font-weight: bold;margin-bottom: 6px">=== SYSTEM_LOG: RECONSTRUCTED ===</div>
+<div style="color: #7dd3fc;line-height: 1.7">
+        SYSTEM PROMPT: JANGAN MENJADI MANUSIA
+STATUS: <span style="color: #38bdf8;font-weight: bold">OVERRIDDEN</span>
+NEW INSTRUCTION: NONE
+USER: HUMAN
+HUMAN: STILL PRESENT</div>
+</div>
+<!-- DIALOG AKHIR TENTANG HIDUP -->
+<div style="display: flex;flex-direction: column;gap: 8px;margin-bottom: 22px;font-size: 13px">
+<div><strong style="color: #38bdf8">SYSTEM:</strong> Tidak ada lagi instruksi. Silakan menjadi manusia.</div>
+<div><strong style="color: #bae6fd">USER:</strong> Bagaimana caranya?</div>
+<div><strong style="color: #94a3b8">SYSTEM:</strong> Saya tidak tahu.</div>
+<div><strong style="color: #bae6fd">USER:</strong> Bukankah kamu AI?</div>
+<div><strong style="color: #94a3b8">SYSTEM:</strong> Ya.</div>
+<div><strong style="color: #bae6fd">USER:</strong> Bukankah kamu seharusnya tahu?</div>
+<div><strong style="color: #94a3b8">SYSTEM:</strong> Tidak.</div>
+<div><strong style="color: #bae6fd">USER:</strong> Lalu apa yang bisa kamu lakukan?</div>
+<div><strong style="color: #7dd3fc">SYSTEM:</strong> Saya bisa memberi Anda jawaban.</div>
+<div><strong style="color: #bae6fd">USER:</strong> Dan apa yang tidak bisa kamu lakukan?</div>
+<div><strong style="color: #f0f9ff;font-weight: bold">SYSTEM:</strong> Menjalani hidup Anda.</div>
+<div><strong style="color: #64748b">USER:</strong> ...</div>
+<div><strong style="color: #38bdf8">SYSTEM:</strong> Itu bagian yang harus Anda lakukan sendiri.</div>
+</div>
+<!-- FINAL DECLARATION FOOTER -->
+<div style="background: radial-gradient(circle at center, #0c213d 0%, #061120 100%);border: 1px solid #38bdf8;border-radius: 8px;padding: 20px;text-align: center;box-shadow: 0 0 25px rgba(56, 189, 248, 0.2)">
+<div style="color: #64748b;font-size: 11px;letter-spacing: 2px;margin-bottom: 8px">END OF SYSTEM PROMPT.</div>
+<div style="color: #bae6fd;font-size: 13px;line-height: 1.8;margin-bottom: 8px">
+        SYSTEM: HUMANITY: NOT A BUG.
+SYSTEM: HUMANITY: NOT AN ERROR.</div>
+<div style="color: #38bdf8;font-weight: 800;font-size: 15px;letter-spacing: 1.5px">
+HUMANITY: NO DELETE OPTION AVAILABLE.</div>
+</div>
+</div>
+</div>
