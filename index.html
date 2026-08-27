@@ -44,7 +44,7 @@
       line-height: 1.5;
     }
 
-    /* Container Lembaran Buku */
+    /* Notebook Page Container */
     .notebook-sheet {
       position: relative;
       width: 100%;
@@ -63,6 +63,7 @@
       border: 1.5px solid #2d3748;
     }
 
+    /* Solasi Kertas */
     .washi-tape-top {
       position: absolute;
       top: -14px;
@@ -77,6 +78,7 @@
       z-index: 10;
     }
 
+    /* Paperclip */
     .clip-decoration {
       position: absolute;
       top: -8px;
@@ -86,6 +88,7 @@
       user-select: none;
     }
 
+    /* Profile Header */
     .profile-section {
       text-align: center;
       margin-bottom: 24px;
@@ -220,6 +223,7 @@
       box-shadow: 1px 1px 0 #1e293b;
     }
 
+    /* Spotify Card */
     .card-spotify {
       background: #f0fdf4;
       border-color: #15803d;
@@ -227,6 +231,35 @@
     }
     .card-spotify:hover {
       box-shadow: 5px 6px 0 #15803d;
+    }
+
+    /* Highlight Card (New Post) */
+    .card-new {
+      background: #fffbeb;
+      border-color: #b45309;
+      box-shadow: 3px 3px 0 #b45309;
+    }
+    .card-new:hover {
+      box-shadow: 5px 6px 0 #b45309;
+    }
+
+    .card-new .link-num {
+      background: #fef3c7;
+      border-color: #d97706;
+      color: #b45309;
+    }
+
+    .badge-new {
+      font-family: 'Caveat', cursive;
+      font-size: 14px;
+      background: #ef4444;
+      color: #ffffff;
+      padding: 1px 8px;
+      border-radius: 10px;
+      font-weight: bold;
+      transform: rotate(-3deg);
+      display: inline-block;
+      margin-left: 6px;
     }
 
     .link-num {
@@ -261,6 +294,9 @@
       font-weight: 700;
       line-height: 1.3;
       color: #0f172a;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
     }
 
     .link-sub {
@@ -315,6 +351,20 @@
       text-decoration: none;
       border-bottom: 1px dashed #0284c7;
     }
+
+    @media (max-width: 400px) {
+      .notebook-sheet {
+        padding: 34px 16px 24px 16px;
+      }
+      .link-title {
+        font-size: 15px;
+      }
+      .link-num {
+        min-width: 28px;
+        height: 28px;
+        font-size: 17px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -323,6 +373,7 @@
     <div class="washi-tape-top"></div>
     <div class="clip-decoration">📎</div>
 
+    <!-- Header Profil -->
     <header class="profile-section">
       <div class="avatar-wrapper">
         <div class="avatar-tape"></div>
@@ -343,6 +394,7 @@
 
     <hr class="sketch-divider">
 
+    <!-- Featured & External Channels -->
     <div style="margin-bottom: 20px;">
       <div class="section-tag">⭐ Podcast & Jurnal</div>
       
@@ -369,15 +421,29 @@
       </div>
     </div>
 
+    <!-- Catatan & Esai Terbaru -->
     <div>
       <div class="section-tag" style="background:#e0f2fe; color:#0369a1; border-color:#7dd3fc; transform: rotate(1deg);">
         ✍️ Catatan & Esai Terbaru
       </div>
 
       <div class="links-list">
-        <!-- 03 -->
-        <a href="https://prima.art.blog/2026/08/24/tutorial-menjadi-warga-negara-yang-baik/" target="_blank" rel="noopener noreferrer" class="link-card">
+        <!-- 03 Chat dengan Presiden RI (Baru) -->
+        <a href="https://prima.art.blog/2026/08/27/chat-dengan-presiden-republik-indonesia/" target="_blank" rel="noopener noreferrer" class="link-card card-new">
           <span class="link-num">03</span>
+          <div class="link-info">
+            <div class="link-title">
+              Chat dengan Presiden Republik Indonesia
+              <span class="badge-new">Baru!</span>
+            </div>
+            <div class="link-sub">Obrolan imajiner, satir & refleksi kepemimpinan</div>
+          </div>
+          <span class="link-arrow">➔</span>
+        </a>
+
+        <!-- 04 Tutorial Menjadi Warga Negara -->
+        <a href="https://prima.art.blog/2026/08/24/tutorial-menjadi-warga-negara-yang-baik/" target="_blank" rel="noopener noreferrer" class="link-card">
+          <span class="link-num">04</span>
           <div class="link-info">
             <div class="link-title">Tutorial Menjadi Warga Negara yang Baik</div>
             <div class="link-sub">Esai sosial & refleksi diri</div>
@@ -385,9 +451,9 @@
           <span class="link-arrow">➔</span>
         </a>
 
-        <!-- 04 -->
+        <!-- 05 Indonesia dari Struk Belanja -->
         <a href="https://prima.art.blog/2026/08/24/indonesia-dari-struk-belanja/" target="_blank" rel="noopener noreferrer" class="link-card">
-          <span class="link-num">04</span>
+          <span class="link-num">05</span>
           <div class="link-info">
             <div class="link-title">Indonesia dari Struk Belanja</div>
             <div class="link-sub">Membaca realitas lewat kasir & nota</div>
@@ -395,9 +461,9 @@
           <span class="link-arrow">➔</span>
         </a>
 
-        <!-- 05 -->
+        <!-- 06 Ketika AI Diminta Menulis Esai Ketidakadilan -->
         <a href="https://prima.art.blog/2026/08/25/ketika-ai-diminta-menulis-esai-tentang-ketidakadilan/" target="_blank" rel="noopener noreferrer" class="link-card">
-          <span class="link-num">05</span>
+          <span class="link-num">06</span>
           <div class="link-info">
             <div class="link-title">Ketika AI Diminta Menulis Esai Ketidakadilan</div>
             <div class="link-sub">Eksplorasi batas moral kecerdasan buatan</div>
@@ -405,9 +471,9 @@
           <span class="link-arrow">➔</span>
         </a>
 
-        <!-- 06 -->
+        <!-- 07 System Prompt: Jangan Menjadi Manusia -->
         <a href="https://prima.art.blog/2026/08/26/sytem-prompt-jangan-menjadi-manusia/" target="_blank" rel="noopener noreferrer" class="link-card">
-          <span class="link-num">06</span>
+          <span class="link-num">07</span>
           <div class="link-info">
             <div class="link-title">System Prompt: Jangan Menjadi Manusia</div>
             <div class="link-sub">Eksperimen prompt & makna kemanusiaan</div>
@@ -417,6 +483,7 @@
       </div>
     </div>
 
+    <!-- Catatan Tempel Bawah -->
     <div class="sticky-footer-note">
       "Menulis untuk merawat ingatan dan menertawakan realitas." ✨
     </div>
