@@ -28,7 +28,7 @@
     body {
       min-height: 100vh;
       background-color: var(--paper-bg);
-      /* Background Kertas Kotak-Kotak (Grid Notebook) */
+      /* Background Kertas Kotak-Kotak */
       background-image: 
         linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
         linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px),
@@ -88,7 +88,7 @@
 
     .profile-section {
       text-align: center;
-      margin-bottom: 24px;
+      margin-bottom: 20px;
       position: relative;
     }
 
@@ -166,6 +166,41 @@
       gap: 6px;
     }
 
+    /* Input Pencarian Gaya Kertas */
+    .search-box-wrapper {
+      margin: 16px 0 10px 0;
+      position: relative;
+    }
+
+    .search-input {
+      width: 100%;
+      font-family: 'Patrick Hand', 'Kalam', cursive;
+      font-size: 17px;
+      padding: 10px 14px 10px 38px;
+      border: 2px dashed #64748b;
+      border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+      background: #fafaf9;
+      color: #0f172a;
+      outline: none;
+      transition: all 0.2s ease;
+    }
+
+    .search-input:focus {
+      border-color: #0284c7;
+      background: #ffffff;
+      box-shadow: 2px 2px 0 #0284c7;
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 18px;
+      color: #64748b;
+      pointer-events: none;
+    }
+
     .sketch-divider {
       border: none;
       height: 2px;
@@ -215,9 +250,8 @@
       background-color: #fdfefe;
     }
 
-    .link-card:active {
-      transform: translate(2px, 2px);
-      box-shadow: 1px 1px 0 #1e293b;
+    .link-card.hidden {
+      display: none !important;
     }
 
     .card-spotify {
@@ -225,23 +259,11 @@
       border-color: #15803d;
       box-shadow: 3px 3px 0 #15803d;
     }
-    .card-spotify:hover {
-      box-shadow: 5px 6px 0 #15803d;
-    }
 
     .card-new {
       background: #fffbeb;
       border-color: #b45309;
       box-shadow: 3px 3px 0 #b45309;
-    }
-    .card-new:hover {
-      box-shadow: 5px 6px 0 #b45309;
-    }
-
-    .card-new .link-num {
-      background: #fef3c7;
-      border-color: #d97706;
-      color: #b45309;
     }
 
     .badge-new {
@@ -273,12 +295,6 @@
       flex-shrink: 0;
     }
 
-    .card-spotify .link-num {
-      background: #dcfce7;
-      border-color: #16a34a;
-      color: #15803d;
-    }
-
     .link-info {
       flex: 1;
       text-align: left;
@@ -305,12 +321,17 @@
       font-size: 22px;
       font-weight: bold;
       color: #64748b;
-      transition: transform 0.2s ease;
     }
 
-    .link-card:hover .link-arrow {
-      transform: translateX(4px);
-      color: #0f172a;
+    .no-results {
+      display: none;
+      text-align: center;
+      padding: 16px;
+      font-size: 16px;
+      color: #94a3b8;
+      background: #f8fafc;
+      border: 1px dashed #cbd5e1;
+      border-radius: 8px;
     }
 
     .sticky-footer-note {
@@ -346,20 +367,6 @@
       text-decoration: none;
       border-bottom: 1px dashed #0284c7;
     }
-
-    @media (max-width: 400px) {
-      .notebook-sheet {
-        padding: 34px 16px 24px 16px;
-      }
-      .link-title {
-        font-size: 15px;
-      }
-      .link-num {
-        min-width: 28px;
-        height: 28px;
-        font-size: 17px;
-      }
-    }
   </style>
 </head>
 <body>
@@ -385,6 +392,12 @@
         <span>Hai, Apa Kabar?</span>
         <span>✌️</span>
       </div>
+
+      <!-- Kotak Pencarian Baru -->
+      <div class="search-box-wrapper">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="searchInput" class="search-input" placeholder="Cari tulisan atau esai..." onkeyup="filterLinks()">
+      </div>
     </header>
 
     <hr class="sketch-divider">
@@ -394,7 +407,6 @@
       <div class="section-tag">⭐ Podcast & Jurnal</div>
       
       <div class="links-list">
-        <!-- 01 Spotify -->
         <a href="https://open.spotify.com/show/62wmnwLh0pf62dtAc37e0p?si=CNq2tvglQHafx-qztGY8JQ&utm_source=copy-link" target="_blank" rel="noopener noreferrer" class="link-card card-spotify">
           <span class="link-num">01</span>
           <div class="link-info">
@@ -404,7 +416,6 @@
           <span class="link-arrow">➔</span>
         </a>
 
-        <!-- 02 Notion -->
         <a href="https://primah.notion.site/Prima-H-5998303967a048b0a4d64f4fb0a43d1e" target="_blank" rel="noopener noreferrer" class="link-card">
           <span class="link-num">02</span>
           <div class="link-info">
@@ -422,8 +433,7 @@
         ✍️ Catatan & Esai Terbaru
       </div>
 
-      <div class="links-list">
-        <!-- 03 Chat dengan Presiden RI -->
+      <div class="links-list" id="essayList">
         <a href="https://prima.art.blog/2026/08/27/chat-dengan-presiden-republik-indonesia/" target="_blank" rel="noopener noreferrer" class="link-card card-new">
           <span class="link-num">03</span>
           <div class="link-info">
@@ -436,7 +446,6 @@
           <span class="link-arrow">➔</span>
         </a>
 
-        <!-- 04 Prompt untuk Membuat Indonesia -->
         <a href="https://prima.art.blog/2026/08/25/prompt-untuk-membuat-indonesia/" target="_blank" rel="noopener noreferrer" class="link-card">
           <span class="link-num">04</span>
           <div class="link-info">
@@ -446,7 +455,6 @@
           <span class="link-arrow">➔</span>
         </a>
 
-        <!-- 05 Tutorial Menjadi Warga Negara -->
         <a href="https://prima.art.blog/2026/08/24/tutorial-menjadi-warga-negara-yang-baik/" target="_blank" rel="noopener noreferrer" class="link-card">
           <span class="link-num">05</span>
           <div class="link-info">
@@ -456,7 +464,6 @@
           <span class="link-arrow">➔</span>
         </a>
 
-        <!-- 06 Indonesia dari Struk Belanja -->
         <a href="https://prima.art.blog/2026/08/24/indonesia-dari-struk-belanja/" target="_blank" rel="noopener noreferrer" class="link-card">
           <span class="link-num">06</span>
           <div class="link-info">
@@ -466,7 +473,6 @@
           <span class="link-arrow">➔</span>
         </a>
 
-        <!-- 07 Ketika AI Diminta Menulis Esai Ketidakadilan -->
         <a href="https://prima.art.blog/2026/08/25/ketika-ai-diminta-menulis-esai-tentang-ketidakadilan/" target="_blank" rel="noopener noreferrer" class="link-card">
           <span class="link-num">07</span>
           <div class="link-info">
@@ -476,7 +482,6 @@
           <span class="link-arrow">➔</span>
         </a>
 
-        <!-- 08 System Prompt: Jangan Menjadi Manusia -->
         <a href="https://prima.art.blog/2026/08/26/sytem-prompt-jangan-menjadi-manusia/" target="_blank" rel="noopener noreferrer" class="link-card">
           <span class="link-num">08</span>
           <div class="link-info">
@@ -485,6 +490,11 @@
           </div>
           <span class="link-arrow">➔</span>
         </a>
+      </div>
+
+      <!-- Pesan jika hasil pencarian kosong -->
+      <div id="noResults" class="no-results">
+        📝 Tulisan tidak ditemukan... Coba kata kunci lain.
       </div>
     </div>
 
@@ -495,8 +505,33 @@
     <footer class="footer-credits">
       Dibuat dengan pensil & kertas digital ✎ <a href="https://prima.art.blog" target="_blank" rel="noopener noreferrer">prima.art.blog</a>
     </footer>
-
   </main>
 
+  <!-- Script Pencarian Live -->
+  <script>
+    function filterLinks() {
+      const input = document.getElementById('searchInput');
+      const filter = input.value.toLowerCase();
+      const cards = document.querySelectorAll('.link-card');
+      let visibleCount = 0;
+
+      cards.forEach(card => {
+        const text = card.textContent || card.innerText;
+        if (text.toLowerCase().indexOf(filter) > -1) {
+          card.classList.remove('hidden');
+          visibleCount++;
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+
+      const noResults = document.getElementById('noResults');
+      if (visibleCount === 0) {
+        noResults.style.display = 'block';
+      } else {
+        noResults.style.display = 'none';
+      }
+    }
+  </script>
 </body>
 </html>
