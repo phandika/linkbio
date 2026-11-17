@@ -42,6 +42,7 @@
       align-items: flex-start;
       padding: 30px 16px;
       line-height: 1.5;
+      overflow-x: hidden;
     }
 
     /* Container Lembaran Buku Tulis */
@@ -54,7 +55,7 @@
         linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
         linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
       background-size: 24px 24px;
-      padding: 40px 24px 30px 24px;
+      padding: 44px 24px 30px 24px;
       border-radius: 4px 18px 6px 16px / 16px 6px 18px 4px;
       box-shadow: 
         0 1px 3px rgba(0,0,0,0.06), 
@@ -86,10 +87,199 @@
       user-select: none;
     }
 
+    /* Tombol Buka Sidebar (Menu Tools) */
+    .menu-toggle-btn {
+      position: absolute;
+      top: 14px;
+      left: 16px;
+      background: #fef9c3;
+      border: 1.5px solid #334155;
+      border-radius: 8px 14px 6px 12px;
+      padding: 5px 12px;
+      font-family: 'Patrick Hand', cursive;
+      font-size: 16px;
+      font-weight: bold;
+      color: #0f172a;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 2px 2px 0 #334155;
+      transition: all 0.15s ease;
+      z-index: 20;
+    }
+
+    .menu-toggle-btn:hover {
+      transform: translate(-1px, -2px);
+      box-shadow: 3px 4px 0 #334155;
+      background: #fef08a;
+    }
+
+    .menu-toggle-btn:active {
+      transform: translate(1px, 1px);
+      box-shadow: 1px 1px 0 #334155;
+    }
+
+    /* Overlay & Sidebar Drawer */
+    .sidebar-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.35);
+      backdrop-filter: blur(2px);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.25s ease;
+      z-index: 90;
+    }
+
+    .sidebar-overlay.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .sidebar-drawer {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 290px;
+      max-width: 82vw;
+      height: 100vh;
+      background-color: #fdfcf8;
+      background-image: 
+        linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+        linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
+      background-size: 20px 20px;
+      border-right: 2px solid #2d3748;
+      box-shadow: 6px 0 24px rgba(0, 0, 0, 0.18);
+      padding: 24px 18px;
+      transform: translateX(-105%);
+      transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+      z-index: 100;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .sidebar-drawer.active {
+      transform: translateX(0);
+    }
+
+    .sidebar-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-bottom: 12px;
+      border-bottom: 2px dashed #64748b;
+      margin-bottom: 18px;
+    }
+
+    .sidebar-title {
+      font-family: 'Caveat', cursive;
+      font-size: 26px;
+      font-weight: 700;
+      color: #0f172a;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .close-sidebar-btn {
+      background: #fee2e2;
+      border: 1.5px solid #991b1b;
+      color: #991b1b;
+      font-family: 'Patrick Hand', cursive;
+      font-size: 16px;
+      font-weight: bold;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 1.5px 1.5px 0 #991b1b;
+    }
+
+    .close-sidebar-btn:hover {
+      background: #fecaca;
+    }
+
+    .sidebar-desc {
+      font-size: 14px;
+      color: #475569;
+      margin-bottom: 16px;
+      background: #fffbeb;
+      padding: 8px 12px;
+      border-radius: 6px;
+      border: 1px dashed #f59e0b;
+    }
+
+    .tool-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      flex: 1;
+    }
+
+    .tool-card {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      background: #ffffff;
+      padding: 12px 14px;
+      text-decoration: none;
+      color: #1e293b;
+      border: 2px solid #334155;
+      border-radius: 12px 4px 14px 6px;
+      box-shadow: 3px 3px 0 #334155;
+      transition: all 0.18s ease;
+    }
+
+    .tool-card:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: 4px 5px 0 #334155;
+      background: #f0f9ff;
+      border-color: #0284c7;
+    }
+
+    .tool-icon {
+      font-size: 24px;
+      line-height: 1;
+      margin-top: 2px;
+    }
+
+    .tool-info {
+      flex: 1;
+    }
+
+    .tool-name {
+      font-size: 17px;
+      font-weight: 700;
+      color: #0f172a;
+      line-height: 1.25;
+    }
+
+    .tool-sub {
+      font-size: 13px;
+      color: #64748b;
+      margin-top: 3px;
+    }
+
+    .sidebar-footer {
+      margin-top: auto;
+      padding-top: 12px;
+      border-top: 1px dashed #94a3b8;
+      font-family: 'Caveat', cursive;
+      font-size: 17px;
+      color: #64748b;
+      text-align: center;
+    }
+
+    /* Profile Header */
     .profile-section {
       text-align: center;
       margin-bottom: 20px;
       position: relative;
+      margin-top: 8px;
     }
 
     .avatar-wrapper {
@@ -371,7 +561,50 @@
 </head>
 <body>
 
+  <!-- Overlay Background Saat Sidebar Terbuka -->
+  <div id="sidebarOverlay" class="sidebar-overlay" onclick="toggleSidebar()"></div>
+
+  <!-- Bilah Menu / Sidebar Tools -->
+  <aside id="sidebarDrawer" class="sidebar-drawer" aria-label="Menu Alat & Utilitas">
+    <div class="sidebar-header">
+      <div class="sidebar-title">🧰 Kotak Alat</div>
+      <button type="button" class="close-sidebar-btn" onclick="toggleSidebar()" aria-label="Tutup Menu">✕</button>
+    </div>
+
+    <div class="sidebar-desc">
+      Kumpulan alat bantu tulis & kreasi konten praktis:
+    </div>
+
+    <div class="tool-list">
+      <a href="https://ai-detector.darlene.workers.dev/" target="_blank" rel="noopener noreferrer" class="tool-card">
+        <span class="tool-icon">🕵️‍♂️</span>
+        <div class="tool-info">
+          <div class="tool-name">Detektor AI</div>
+          <div class="tool-sub">Cek & analisis teks hasil kecerdasan buatan</div>
+        </div>
+      </a>
+
+      <a href="https://carousel.darlene.workers.dev/" target="_blank" rel="noopener noreferrer" class="tool-card">
+        <span class="tool-icon">🎠</span>
+        <div class="tool-info">
+          <div class="tool-name">Paragraf to Carousel Maker</div>
+          <div class="tool-sub">Ubah tulisan panjang menjadi slide carousel</div>
+        </div>
+      </a>
+    </div>
+
+    <div class="sidebar-footer">
+      ✎ Tools oleh @prima.art.blog
+    </div>
+  </aside>
+
   <main class="notebook-sheet">
+    <!-- Tombol Trigger Sidebar di Pojok Kiri Atas -->
+    <button type="button" class="menu-toggle-btn" onclick="toggleSidebar()" aria-label="Buka Menu Alat">
+      <span>☰</span>
+      <span>Tools</span>
+    </button>
+
     <div class="washi-tape-top"></div>
     <div class="clip-decoration">📎</div>
 
@@ -380,12 +613,12 @@
       <div class="avatar-wrapper">
         <div class="avatar-tape"></div>
         <div class="avatar-frame">
-          <img class="avatar-img" src="https://primadotartdotblog.wordpress.com/wp-content/uploads/2026/08/cropped-img_20260827_192815.png" alt="Prima Avatar" onerror="this.src='https://api.dicebear.com/7.x/bottts/svg?seed=Prima'">
+          <img class="avatar-img" src="https://prima.art.blog/wp-content/uploads/2023/06/cropped-img_20230619_234041.jpg?w=192" alt="Prima Avatar" onerror="this.src='https://api.dicebear.com/7.x/bottts/svg?seed=Prima'">
         </div>
       </div>
       
       <h1 class="profile-title">Prima H</h1>
-      
+      <a href="https://prima.art.blog" target="_blank" rel="noopener noreferrer" class="profile-handle">@prima.art.blog</a>
       
       <div class="profile-greeting">
         <span>🗨️</span>
@@ -487,96 +720,4 @@
           <span class="link-arrow">➔</span>
         </a>
 
-        <!-- 08 Prompt untuk Membuat Indonesia -->
-        <a href="https://prima.art.blog/2026/08/25/prompt-untuk-membuat-indonesia/" target="_blank" rel="noopener noreferrer" class="link-card">
-          <span class="link-num">08</span>
-          <div class="link-info">
-            <div class="link-title">Prompt untuk Membuat Indonesia</div>
-            <div class="link-sub">Merajut keindonesiaan lewat instruksi & imajinasi</div>
-          </div>
-          <span class="link-arrow">➔</span>
-        </a>
-
-        <!-- 09 Tutorial Menjadi Warga Negara -->
-        <a href="https://prima.art.blog/2026/08/24/tutorial-menjadi-warga-negara-yang-baik/" target="_blank" rel="noopener noreferrer" class="link-card">
-          <span class="link-num">09</span>
-          <div class="link-info">
-            <div class="link-title">Tutorial Menjadi Warga Negara yang Baik</div>
-            <div class="link-sub">Esai sosial & refleksi diri</div>
-          </div>
-          <span class="link-arrow">➔</span>
-        </a>
-
-        <!-- 10 Indonesia dari Struk Belanja -->
-        <a href="https://prima.art.blog/2026/08/24/indonesia-dari-struk-belanja/" target="_blank" rel="noopener noreferrer" class="link-card">
-          <span class="link-num">10</span>
-          <div class="link-info">
-            <div class="link-title">Indonesia dari Struk Belanja</div>
-            <div class="link-sub">Membaca realitas lewat kasir & nota</div>
-          </div>
-          <span class="link-arrow">➔</span>
-        </a>
-
-        <!-- 11 Ketika AI Diminta Menulis Esai Ketidakadilan -->
-        <a href="https://prima.art.blog/2026/08/25/ketika-ai-diminta-menulis-esai-tentang-ketidakadilan/" target="_blank" rel="noopener noreferrer" class="link-card">
-          <span class="link-num">11</span>
-          <div class="link-info">
-            <div class="link-title">Ketika AI Diminta Menulis Esai Ketidakadilan</div>
-            <div class="link-sub">Eksplorasi batas moral kecerdasan buatan</div>
-          </div>
-          <span class="link-arrow">➔</span>
-        </a>
-
-        <!-- 12 System Prompt: Jangan Menjadi Manusia -->
-        <a href="https://prima.art.blog/2026/08/26/sytem-prompt-jangan-menjadi-manusia/" target="_blank" rel="noopener noreferrer" class="link-card">
-          <span class="link-num">12</span>
-          <div class="link-info">
-            <div class="link-title">System Prompt: Jangan Menjadi Manusia</div>
-            <div class="link-sub">Eksperimen prompt & makna kemanusiaan</div>
-          </div>
-          <span class="link-arrow">➔</span>
-        </a>
-      </div>
-
-      <!-- Pesan jika hasil pencarian kosong -->
-      <div id="noResults" class="no-results">
-        📝 Tulisan tidak ditemukan... Coba kata kunci lain.
-      </div>
-    </div>
-
-    <div class="sticky-footer-note">
-      "Menulis untuk merawat ingatan dan menertawakan realitas." ✨
-    </div>
-
-    <footer class="footer-credits">
-      Dibuat dengan pensil & kertas digital ✎ <a href="https://prima.art.blog" target="_blank" rel="noopener noreferrer">prima.art.blog</a>
-    </footer>
-  </main>
-
-  <script>
-    function filterLinks() {
-      const input = document.getElementById('searchInput');
-      const filter = input.value.toLowerCase();
-      const cards = document.querySelectorAll('.link-card');
-      let visibleCount = 0;
-
-      cards.forEach(card => {
-        const text = card.textContent || card.innerText;
-        if (text.toLowerCase().indexOf(filter) > -1) {
-          card.classList.remove('hidden');
-          visibleCount++;
-        } else {
-          card.classList.add('hidden');
-        }
-      });
-
-      const noResults = document.getElementById('noResults');
-      if (visibleCount === 0) {
-        noResults.style.display = 'block';
-      } else {
-        noResults.style.display = 'none';
-      }
-    }
-  </script>
-</body>
-</html>
+        <!-- 08 Prompt untuk Membuat Indon
