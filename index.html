@@ -45,6 +45,11 @@
       overflow-x: hidden;
     }
 
+    /* CSS-Only Checkbox Hack (Jaminan 100% jalan meski JS diblokir WordPress!) */
+    #sidebar-toggle-checkbox {
+      display: none !important;
+    }
+
     /* Container Lembaran Buku Tulis */
     .notebook-sheet {
       position: relative;
@@ -76,6 +81,7 @@
       border-right: 2px dashed rgba(0,0,0,0.15);
       box-shadow: 0 2px 5px rgba(0,0,0,0.08);
       z-index: 10;
+      pointer-events: none;
     }
 
     .clip-decoration {
@@ -85,9 +91,10 @@
       font-size: 28px;
       transform: rotate(15deg);
       user-select: none;
+      pointer-events: none;
     }
 
-    /* Tombol Buka Sidebar (Menu Tools) */
+    /* Tombol Buka Sidebar (Label untuk Checkbox) */
     .menu-toggle-btn {
       position: absolute;
       top: 14px;
@@ -95,18 +102,19 @@
       background: #fef9c3;
       border: 1.5px solid #334155;
       border-radius: 8px 14px 6px 12px;
-      padding: 5px 12px;
+      padding: 6px 14px;
       font-family: 'Patrick Hand', cursive;
       font-size: 16px;
       font-weight: bold;
       color: #0f172a;
       cursor: pointer;
-      display: flex;
+      display: inline-flex;
       align-items: center;
       gap: 6px;
       box-shadow: 2px 2px 0 #334155;
       transition: all 0.15s ease;
-      z-index: 20;
+      z-index: 30;
+      user-select: none;
     }
 
     .menu-toggle-btn:hover {
@@ -123,25 +131,24 @@
     /* Overlay & Sidebar Drawer */
     .sidebar-overlay {
       position: fixed;
-      inset: 0;
-      background: rgba(15, 23, 42, 0.35);
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(15, 23, 42, 0.45);
       backdrop-filter: blur(2px);
       opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.25s ease;
-      z-index: 90;
-    }
-
-    .sidebar-overlay.active {
-      opacity: 1;
-      pointer-events: auto;
+      visibility: hidden;
+      transition: opacity 0.25s ease, visibility 0.25s ease;
+      z-index: 9998;
+      cursor: pointer;
     }
 
     .sidebar-drawer {
       position: fixed;
       top: 0;
       left: 0;
-      width: 290px;
+      width: 295px;
       max-width: 82vw;
       height: 100vh;
       background-color: #fdfcf8;
@@ -150,16 +157,22 @@
         linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
       background-size: 20px 20px;
       border-right: 2px solid #2d3748;
-      box-shadow: 6px 0 24px rgba(0, 0, 0, 0.18);
+      box-shadow: 6px 0 24px rgba(0, 0, 0, 0.22);
       padding: 24px 18px;
       transform: translateX(-105%);
       transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
-      z-index: 100;
+      z-index: 9999;
       display: flex;
       flex-direction: column;
     }
 
-    .sidebar-drawer.active {
+    /* Trigger CSS murni saat checkbox dicentang (tidak bergantung pada JS) */
+    #sidebar-toggle-checkbox:checked ~ .sidebar-overlay {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    #sidebar-toggle-checkbox:checked ~ .sidebar-drawer {
       transform: translateX(0);
     }
 
@@ -189,14 +202,15 @@
       font-family: 'Patrick Hand', cursive;
       font-size: 16px;
       font-weight: bold;
-      width: 30px;
-      height: 30px;
+      width: 32px;
+      height: 32px;
       border-radius: 50%;
       cursor: pointer;
-      display: flex;
+      display: inline-flex;
       align-items: center;
       justify-content: center;
       box-shadow: 1.5px 1.5px 0 #991b1b;
+      user-select: none;
     }
 
     .close-sidebar-btn:hover {
@@ -561,14 +575,17 @@
 </head>
 <body>
 
+  <!-- Checkbox Rahasia untuk Kontrol Sidebar Tanpa JavaScript -->
+  <input type="checkbox" id="sidebar-toggle-checkbox" aria-hidden="true">
+
   <!-- Overlay Background Saat Sidebar Terbuka -->
-  <div id="sidebarOverlay" class="sidebar-overlay" onclick="toggleSidebar()"></div>
+  <label for="sidebar-toggle-checkbox" class="sidebar-overlay" aria-label="Tutup Menu"></label>
 
   <!-- Bilah Menu / Sidebar Tools -->
-  <aside id="sidebarDrawer" class="sidebar-drawer" aria-label="Menu Alat & Utilitas">
+  <aside class="sidebar-drawer" aria-label="Menu Alat & Utilitas">
     <div class="sidebar-header">
       <div class="sidebar-title">🧰 Kotak Alat</div>
-      <button type="button" class="close-sidebar-btn" onclick="toggleSidebar()" aria-label="Tutup Menu">✕</button>
+      <label for="sidebar-toggle-checkbox" class="close-sidebar-btn" aria-label="Tutup Menu">✕</label>
     </div>
 
     <div class="sidebar-desc">
@@ -600,10 +617,10 @@
 
   <main class="notebook-sheet">
     <!-- Tombol Trigger Sidebar di Pojok Kiri Atas -->
-    <button type="button" class="menu-toggle-btn" onclick="toggleSidebar()" aria-label="Buka Menu Alat">
+    <label for="sidebar-toggle-checkbox" class="menu-toggle-btn" role="button" tabindex="0">
       <span>☰</span>
       <span>Tools</span>
-    </button>
+    </label>
 
     <div class="washi-tape-top"></div>
     <div class="clip-decoration">📎</div>
@@ -720,4 +737,96 @@
           <span class="link-arrow">➔</span>
         </a>
 
-        <!-- 08 Prompt untuk Membuat Indon
+        <!-- 08 Prompt untuk Membuat Indonesia -->
+        <a href="https://prima.art.blog/2026/08/25/prompt-untuk-membuat-indonesia/" target="_blank" rel="noopener noreferrer" class="link-card">
+          <span class="link-num">08</span>
+          <div class="link-info">
+            <div class="link-title">Prompt untuk Membuat Indonesia</div>
+            <div class="link-sub">Merajut keindonesiaan lewat instruksi & imajinasi</div>
+          </div>
+          <span class="link-arrow">➔</span>
+        </a>
+
+        <!-- 09 Tutorial Menjadi Warga Negara -->
+        <a href="https://prima.art.blog/2026/08/24/tutorial-menjadi-warga-negara-yang-baik/" target="_blank" rel="noopener noreferrer" class="link-card">
+          <span class="link-num">09</span>
+          <div class="link-info">
+            <div class="link-title">Tutorial Menjadi Warga Negara yang Baik</div>
+            <div class="link-sub">Esai sosial & refleksi diri</div>
+          </div>
+          <span class="link-arrow">➔</span>
+        </a>
+
+        <!-- 10 Indonesia dari Struk Belanja -->
+        <a href="https://prima.art.blog/2026/08/24/indonesia-dari-struk-belanja/" target="_blank" rel="noopener noreferrer" class="link-card">
+          <span class="link-num">10</span>
+          <div class="link-info">
+            <div class="link-title">Indonesia dari Struk Belanja</div>
+            <div class="link-sub">Membaca realitas lewat kasir & nota</div>
+          </div>
+          <span class="link-arrow">➔</span>
+        </a>
+
+        <!-- 11 Ketika AI Diminta Menulis Esai Ketidakadilan -->
+        <a href="https://prima.art.blog/2026/08/25/ketika-ai-diminta-menulis-esai-tentang-ketidakadilan/" target="_blank" rel="noopener noreferrer" class="link-card">
+          <span class="link-num">11</span>
+          <div class="link-info">
+            <div class="link-title">Ketika AI Diminta Menulis Esai Ketidakadilan</div>
+            <div class="link-sub">Eksplorasi batas moral kecerdasan buatan</div>
+          </div>
+          <span class="link-arrow">➔</span>
+        </a>
+
+        <!-- 12 System Prompt: Jangan Menjadi Manusia -->
+        <a href="https://prima.art.blog/2026/08/26/sytem-prompt-jangan-menjadi-manusia/" target="_blank" rel="noopener noreferrer" class="link-card">
+          <span class="link-num">12</span>
+          <div class="link-info">
+            <div class="link-title">System Prompt: Jangan Menjadi Manusia</div>
+            <div class="link-sub">Eksperimen prompt & makna kemanusiaan</div>
+          </div>
+          <span class="link-arrow">➔</span>
+        </a>
+      </div>
+
+      <!-- Pesan jika hasil pencarian kosong -->
+      <div id="noResults" class="no-results">
+        📝 Tulisan tidak ditemukan... Coba kata kunci lain.
+      </div>
+    </div>
+
+    <div class="sticky-footer-note">
+      "Menulis untuk merawat ingatan dan menertawakan realitas." ✨
+    </div>
+
+    <footer class="footer-credits">
+      Dibuat dengan pensil & kertas digital ✎ <a href="https://prima.art.blog" target="_blank" rel="noopener noreferrer">prima.art.blog</a>
+    </footer>
+  </main>
+
+  <script>
+    function filterLinks() {
+      const input = document.getElementById('searchInput');
+      const filter = input.value.toLowerCase();
+      const cards = document.querySelectorAll('.link-card');
+      let visibleCount = 0;
+
+      cards.forEach(card => {
+        const text = card.textContent || card.innerText;
+        if (text.toLowerCase().indexOf(filter) > -1) {
+          card.classList.remove('hidden');
+          visibleCount++;
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+
+      const noResults = document.getElementById('noResults');
+      if (visibleCount === 0) {
+        noResults.style.display = 'block';
+      } else {
+        noResults.style.display = 'none';
+      }
+    }
+  </script>
+</body>
+</html>
